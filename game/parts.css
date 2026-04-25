@@ -1,0 +1,59 @@
+.wire::after,.wire::before{
+  content:"";
+  position:absolute;
+  background:#ccc;
+}
+
+/* straight */
+.wire.straight.h::after{
+  width:100%;height:6px;
+  top:50%;transform:translateY(-50%);
+}
+.wire.straight.v::after{
+  height:100%;width:6px;
+  left:50%;transform:translateX(-50%);
+}
+
+/* corner */
+.wire.corner::after{
+  width:50%;height:6px;
+  top:50%;left:50%;
+  transform:translate(-100%,-50%);
+}
+.wire.corner::before{
+  width:6px;height:50%;
+  top:50%;left:50%;
+  transform:translate(-50%,-100%);
+}
+
+.rot0{transform:rotate(0deg);}
+.rot1{transform:rotate(90deg);}
+.rot2{transform:rotate(180deg);}
+.rot3{transform:rotate(270deg);}
+
+/* cross */
+.wire.cross::after{
+  width:100%;height:6px;
+  top:50%;transform:translateY(-50%);
+}
+.wire.cross::before{
+  height:100%;width:6px;
+  left:50%;transform:translateX(-50%);
+}
+
+/* parts */
+.battery{background:red;display:flex;align-items:center;justify-content:center;}
+.bulb{background:#333;display:flex;align-items:center;justify-content:center;}
+.bulb.on{background:yellow;}
+
+.switch{background:#222;display:flex;align-items:center;justify-content:center;}
+.switch.on{background:#4caf50;}
+
+.mosfet{
+  background:#003;
+  border:2px solid cyan;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.mosfet.on{background:#0af;}

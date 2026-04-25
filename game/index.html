@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Circuit Game</title>
+
+<link rel="stylesheet" href="parts.css">
+
+<style>
+body{margin:0;background:#111;color:white;font-family:Arial;}
+#toolbar{position:fixed;top:10px;left:10px;z-index:1000;}
+button{margin:3px;}
+
+#grid{
+  display:grid;
+  grid-template-columns:repeat(30,40px);
+  grid-template-rows:repeat(30,40px);
+}
+
+.cell{
+  width:40px;height:40px;
+  border:1px solid #222;
+  position:relative;
+}
+
+.layer1{outline:2px solid #00ffff55;}
+
+.ghost{
+  position:absolute;
+  pointer-events:none;
+  opacity:0.5;
+  z-index:999;
+}
+</style>
+</head>
+
+<body>
+
+<div id="toolbar">
+<button onclick="setTool('wire')">Wire</button>
+<button onclick="setTool('battery')">Battery</button>
+<button onclick="setTool('bulb')">Bulb</button>
+<button onclick="setTool('switch')">Switch</button>
+<button onclick="setTool('mosfet')">MOSFET</button>
+<button onclick="setTool('erase')">Erase</button>
+
+<br>
+<button onclick="setLayer(0)">Layer 0</button>
+<button onclick="setLayer(1)">Layer 1</button>
+<span id="layerLabel">Layer: 0</span>
+</div>
+
+<div id="grid"></div>
+
+<script src="parts/parts.js"></script>
+<script src="engine/wiring.js"></script>
+<script src="engine/simulation.js"></script>
+<script src="engine/grid.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
